@@ -1,27 +1,34 @@
-## Introduction
+# Introduction
 
-Empty next project with my standard config
+Next.js init project with my standard config's. Basic Layout added & some initial styling rules that i always include.
+Read
 
 <br>
 
-### Changes to base config / Features
+## Added on top of base init
 
 ---
 
-- 'npx create-next-project' - init
-- jsconfig.json - '@' points to 'root/'
+<br>
+
+- 'npx create-next-project' <-- starting point
+
+<br>
+
+- jsconfig.json - '@' points to 'root'
 - next.config.js - 'imgix' set as img loader to enable export without error/fail for static pages
+- package.json - added 'next export' on top of npm run build. 'npm run build' now creates a static compilation in 'root/out'
 
-- sass - for root & modules
-- .prettierrc
+- sass - DEV DEP, for global/modules
+- .prettierrc - ADDED
 
-- ChansenCode .favicon replacing default
+- ChansenCode - REPLACED default with CHansenCode one
 - Layout file - _read more below..._
 - Component strucuture - _read more below..._
 
 <br>
 
-### Layout
+## Layout
 
 ---
 
@@ -47,7 +54,7 @@ Layout.js
 </ >
 ```
 
-### Components
+## Components
 
 ---
 
