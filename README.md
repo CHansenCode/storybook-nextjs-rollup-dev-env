@@ -1,34 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
 
-## Getting Started
+Empty next project with my standard config
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
+### Changes to base config / Features
+
+---
+
+- 'npx create-next-project' - init
+- jsconfig.json - '@' points to 'root/'
+- next.config.js - 'imgix' set as img loader to enable export without error/fail for static pages
+
+- sass - for root & modules
+- .prettierrc
+
+- ChansenCode .favicon replacing default
+- Layout file - _read more below..._
+- Component strucuture - _read more below..._
+
+<br>
+
+### Layout
+
+---
+
+Layout components live in 'root/Layout', wraps the initial component in #\_\_next root div
+
+```javascript
+<div id="__next">
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
+</div>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```javascript
+Layout.js
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<>
+    <Head /> //title, meta, robotpointer etc..
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    <Header /> // nav / logo
+    {children} // i.e. pages
+    <Footer /> // footer
+</ >
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Components
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+All components will be structured by the following pattern
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_All components are exported from index.js_
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```javascript
+file: '@components/index.js';
 
-## Deploy on Vercel
+export * from './Foo';
+export * from './Bar';
+//...for all components
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_Component_
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```javascript
+file: '@components/Foo/index.js';
+
+export * from './Foo';
+
+file: '@components/Foo/Foo.js';
+
+export const Foo = () => {
+  return (
+    <div>
+      <h4>foo</h4>
+    </div>
+  );
+};
+```
+
+_To import components in Pages/compositions_
+
+```javascript
+import { Foo, Bar } from '@/components';
+```
+
+<br>
