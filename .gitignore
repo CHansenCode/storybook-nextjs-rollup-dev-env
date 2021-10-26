@@ -9,7 +9,7 @@
 /coverage
 
 # NPM publish dir
-/dist/
+/dist
 
 # next.js
 /.next/
