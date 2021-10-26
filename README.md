@@ -1,7 +1,6 @@
 # Introduction
 
 Next.js init project with my standard config's. Basic Layout added & some initial styling rules that i always include.
-Read
 
 <br>
 
@@ -15,7 +14,7 @@ Read
 
 <br>
 
-- jsconfig.json - '@' points to 'root'
+- jsconfig.json - '@' points to 'root' (only setup for 'npm run dev', NOT storybook)
 - next.config.js - 'imgix' set as img loader to enable export without error/fail for static pages
 - package.json - added 'next export' on top of npm run build. 'npm run build' now creates a static compilation in 'root/out'
 
